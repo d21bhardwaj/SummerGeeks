@@ -1,0 +1,39 @@
+{% extends 'table_home.html' %}
+{% block body %}
+
+<h2>Guest currently in office</h2>
+
+<table>
+  <tr>
+    <th>Vistor </th>
+    <th>Contact Number</th>
+    <th>Email</th>
+    <th>Meeting</th>
+    <th>Check Out</th>
+  </tr>
+  
+  {% for visitor in guest %}
+  <tr>
+    <td>{{visitor.visitor_title}} {{visitor.visitor_name}}</td>
+    <td>{{visitor.visitor_phone_no}}</td>
+    <td>{{visitor.visitor_email}}</td>
+    <td>{{visitor.host_name}}</td>
+    {% if visitor.id == guest_id %}
+    <form id="{{visitor.id}}" method="post" validate > 
+    {% csrf_token %}
+    <td>{{ form }}</td>
+    <td><button type="submit" name="visitor" value="{{visitor.id}}">Submit</button></td>
+    </form>
+    {% else %}
+    <td><button 
+        onclick="location.href='{% url "guest_check_out" visitor.id %}'" type="button">
+        {% if employee.in_office == True %}Check Out!{% else %}Check In!{% endif %}
+        </button></td>
+    {% endif %}
+  </tr>
+  
+  {% endfor %}
+  
+</table>
+
+{% endblock %}

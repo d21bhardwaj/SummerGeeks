@@ -1,0 +1,30 @@
+{% extends 'table_home.html' %}
+{% block body %}
+<h2>Employee Available</h2>
+
+<table>
+  <tr>
+    <th>Employee </th>
+    <th>Designation</th>
+    <th>Contact Number</th>
+    <th>Email</th>
+    <th>Available</th>
+    <th>Check In/Out</th>
+  </tr>
+  {% for employee in employees %}
+  <tr>
+    <td>{{employee.title}} {{employee.name}}</td>
+    <td>{{employee.designation}}</td>
+    <td>{{employee.phone_no}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.in_office}}</td>
+    
+    <td><button 
+        onclick="location.href='{% url "employee_availablity" employee.id %}'" type="button">
+        {% if employee.in_office == True %}Check Out!{% else %}Check In!{% endif %}
+        </button></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

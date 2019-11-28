@@ -1,0 +1,36 @@
+{% extends 'table_home.html' %}
+
+{% block body %}
+<h2>All the guest </h2>
+
+<table>
+  <tr>
+    <th>Vistor </th>
+    <th>Contact Number</th>
+    <th>Email</th>
+    <th>Host</th>
+    <th>Host Email</th>
+    <th>Host Contact Number</th>
+    <th>Checked In </th>
+    <th>Checked Out </th>
+  </tr>
+  {% for visitor in guest %}
+  <tr>
+    <td>{{visitor.visitor_title}} {{visitor.visitor_name}}</td>
+    <td>{{visitor.visitor_phone_no}}</td>
+    <td>{{visitor.visitor_email}}</td>
+    <td>{{visitor.host_name.name}}</td>
+    <td>{{visitor.host_name.email}}</td>
+    <td>{{visitor.host_name.phone_no}}</td>
+    <td>{{visitor.in_time}}</td>
+    <td>{% if visitor.left_office == True %}
+        {{visitor.out_time}}
+        {% else %}Not Left{% endif %}
+    </td>
+   
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+{% endblock %}

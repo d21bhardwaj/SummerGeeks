@@ -1,0 +1,7 @@
+Hey, {{ visitor.visitor_title }} {{ visitor.visitor_name }} thanks for visting us
+Ur Checked in time was {{ visitor.in_time }} in the office.
+Ur Check Out time was {{ visitor.out_time }} in the office.
+You visited {{ visitor.host_name.title}} {{ visitor.host_name.name}}
+
+At  office no. {{ visitor.host_name.room_no}} in the department {{ visitor.host_name.department}}, 
+{{ address }}
