@@ -69,7 +69,7 @@ EnteryLog director looks like
 ## Following information is stored in the backend at
   The models for them are made at main/models.py. Check [Models.py](entryLog/main/models.py) 
 * Visitor:
-  **Title, Name, CheckIn, Checkout, Phone number, Email,  Host **, Left office** (True/False)**,OTP**.
+  **Title, Name, CheckIn, Checkout, Phone number, Email,  Host **, Left office** (True/False)**,OTP** 
 * Employee: 
   **Title, Name, Designation, Department, Phone number, Email, Room-No, In Office** (True/False)
   
