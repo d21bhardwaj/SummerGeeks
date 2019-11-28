@@ -18,27 +18,28 @@ def entry_email(visitor_id):
     
     visitor = Entry.objects.get(pk=visitor_id)
     try :
-        template = get_template('guest_arrival.txt')                    
+        template = get_template('guest_arrival.txt')  # Body of email is generated there                  
         context = {
             'visitor' : visitor,
         }
-        content = template.render(context)
+        content = template.render(context) 
         email = EmailMessage(
             "Guest Arrival",
             content,
-            "Cushy" +'',
+            "IIT" +'',
             [ visitor.host_name.email ],
-            headers = {'Reply-To': '21devildev@gmail.com' }
+            headers = {'Reply-To': 'd21bhardwaj@gmail.com' }
         )
         email.send()
         otp = visitor.verification
         message = str("Guest has been successfully checked in. Please note your 4 digit OTP for checkout | "+otp+" |")
 
     except Exception as e :
-        print(type(e))
+        print(type(e)) # Error can be checked at console. #
     #   If email is not send entered will not be created.
-        visitor.delete()
-        message = str("There has been an error in sending email, please check ur email or network connection")
+    #   visitor.delete() --- #
+        otp = visitor.verification
+        message = str("There has been an error in sending email,But you have been checked in Please note your 4 digit OTP for checkout | "+otp+" |")
         
     return message
 
@@ -82,13 +83,13 @@ def exit_email(visitor_id):
             'visitor' : visitor,
             'address' : 'IIT Guwahati, Guwahati'
         }
-        content = template.render(context)
+        content = template.render(context)      # Body of email is generated there # 
         email = EmailMessage(
             "Guest Arrival",
             content,
-            "Cushy" +'',
+            "IIT" +'',
             [ visitor.visitor_email ],
-            headers = {'Reply-To': '21devildev@gmail.com' }
+            headers = {'Reply-To': 'd21bhardwaj@gmail.com' }
         )
         email.send()
         message = str("Thanks for visiting. An email has been succesfully generated regarding your visit.")

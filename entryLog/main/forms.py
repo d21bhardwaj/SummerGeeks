@@ -5,19 +5,19 @@ class EntryForm(forms.ModelForm):
     
     class Meta:
         model = Entry
-        exclude = ['in_time', 'out_time','left_office']
+        exclude = ['in_time', 'out_time','left_office','verification']
         widgets = {
             'visitor_title' : forms.Select(attrs = {'class': 'regDropDown'}),
             'visitor_name' : forms.TextInput(attrs = {'class': 'form-control'}),
             'visitor_phone_no' : forms.TextInput(attrs={'class': 'form-control'}),
             'visitor_email' : forms.EmailInput(attrs={'class': 'form-control'}),
             'host_name' : forms.Select(attrs = {'class': 'regDropDown'}),
-            'verification' : forms.PasswordInput(attrs={'class':'form_control'})
+            
         }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['host_name'].queryset = Employee.objects.filter(in_office= True)
-        self.fields['verification'].required = True
+       
 
    
 
