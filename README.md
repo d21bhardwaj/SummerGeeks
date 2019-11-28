@@ -8,7 +8,8 @@ Python 3.6.8
 pip 9.0.1
 Built on [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 **Tried and tested on Ubuntu** 
-To use 
+To use
+
 Create a virtual environmet 
 ```bash
    $ python3 -m venv env
