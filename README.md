@@ -8,7 +8,8 @@ Django==2.2.7
 Python 3.6.8
 
 pip 9.0.1
-
+ [Requirements](requirements.txt)
+ 
 [WSL](https://wiki.ubuntu.com/WSL) was used for this project.
 For installing it reffer this blog (https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
