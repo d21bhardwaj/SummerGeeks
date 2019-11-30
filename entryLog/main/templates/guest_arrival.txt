@@ -1,7 +1,6 @@
 Hey, {{ visitor.host_name.title }} {{ visitor.host_name.name }} just to inform you that,
 
 {{ visitor.visitor_title }} {{ visitor.visitor_name }} has Checked in at {{ visitor.in_time }} in the office.
-
 Contact details of Guest are:
 Phone number : {{ visitor.visitor_phone_no }}
 Email : {{ visitor.visitor_email }}
