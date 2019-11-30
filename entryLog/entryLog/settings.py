@@ -121,10 +121,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+# Uncomment and fill in the details to continue. 
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_USE_TLS = True
 # EMAIL_PORT = 587
-# EMAIL_HOST_USER = "email@gmail.com"
-# EMAIL_HOST_PASSWORD = 'Google App key'
+# EMAIL_HOST_USER = "email@gmail.com"           #Enter the gmail account from which you wish to send the ammount#
+# EMAIL_HOST_PASSWORD = 'Google App Password'   #Enter the App Password for the gmail account #
 # DEFAULT_FROM_EMAIL = 'Test <EMAIL_HOST_USER>'
