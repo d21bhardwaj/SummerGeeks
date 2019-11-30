@@ -4,13 +4,17 @@ EnteryLog is a website made according to the problem statement [SummerGeeks2020]
 
 ## Built using
 Django==2.2.7
+
 Python 3.6.8
+
 pip 9.0.1
 
 [WSL](https://wiki.ubuntu.com/WSL) was used for this project.
 For installing it reffer this blog (https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
 **Tried and tested on Ubuntu** 
-To use
+
+To use:-
 
 Create a virtual environmet 
 ```bash
