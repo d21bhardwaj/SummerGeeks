@@ -90,7 +90,8 @@ EnteryLog director looks like
  ```
 * Add relevant details thereafter as displayed in console
 
-## In settings.py 
+## Setting up Email service 
+### In the file settings.py 
 **Following code has been commented**
 ```python 
 # EMAIL_HOST = 'smtp.gmail.com'
@@ -104,6 +105,20 @@ EnteryLog director looks like
 
 Enter your gmail account and generate 16 digit app key to test the service. 
 And uncomment the following code in enteryLog/settings.py
+
+**Email content in email are sent using guest_arrival.txt and guest_departure.txt**
+```bash
+templates
+      ├── employee_data.html
+      ├── employee_log.html
+      ├── form.html
+      ├── guest_arrival.txt
+      ├── guest_departure.txt
+      ├── guest_log.html
+      ├── home.html
+      ├── log.html
+      └── table_home.html
+   ```
 
 
 
