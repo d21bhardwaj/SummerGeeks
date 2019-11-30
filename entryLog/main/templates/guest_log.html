@@ -27,8 +27,7 @@
     {% else %}
     <td><button 
         onclick="location.href='{% url "guest_check_out" visitor.id %}'" type="button">
-        {% if employee.in_office == True %}Check Out!{% else %}Check In!{% endif %}
-        </button></td>
+        Check Out!</button></td>
     {% endif %}
   </tr>
   

@@ -32,14 +32,14 @@ def entry_email(visitor_id):
         )
         email.send()
         otp = visitor.verification
-        message = str("Guest has been successfully checked in. Please note your 4 digit OTP for checkout | "+otp+" |")
+        message = str("Guest has been successfully checked in. Please note your 4 digit OTP for checkout | "+str(otp)+" |")
 
     except Exception as e :
         print(type(e)) # Error can be checked at console. #
     #   If email is not send entered will not be created.
     #   visitor.delete() --- #
         otp = visitor.verification
-        message = str("There has been an error in sending email,But you have been checked in Please note your 4 digit OTP for checkout | "+otp+" |")
+        message = str("There has been an error in sending email,But you have been checked in Please note your 4 digit OTP for checkout | "+str(otp)+" |")
         
     return message
 
@@ -62,7 +62,7 @@ def guest_entry(request):
                 visitor.verification = otp
                 visitor = form.save()
             #   To check if the email has been successfully sent
-                message = Entry_email(visitor.id)
+                message = entry_email(visitor.id)
                 return HttpResponse(message)   #---- R1 ----#
     #---- If you want to check it without email functioning  please comment R1 and Un comment the below return ---#
             #    return HttpResponse("Guest has been successfully checked in. Please note your 4 digit OTP for checkout | "+otp+" |")
